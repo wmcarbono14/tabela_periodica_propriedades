@@ -26,6 +26,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      text-align: center;
     }
     header h1 {
       margin: 0;
@@ -37,10 +38,26 @@
       font-size: 0.9rem;
       color: #4b5563;
     }
+    .professor {
+      text-align: center;
+      margin-top: 1.2rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+    .professor strong {
+      display: block;
+      font-size: 1rem;
+      color: #111827;
+    }
+    .professor span {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
     nav {
-      margin-top: 0.7rem;
+      margin-top: 0.8rem;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 0.5rem;
     }
     nav a {
@@ -51,6 +68,7 @@
       border-radius: 999px;
       border: 1px solid #bfdbfe;
       background: #eff6ff;
+      transition: all 0.2s ease;
     }
     nav a:hover {
       background: #1d4ed8;
@@ -121,7 +139,7 @@
       margin-bottom: 0.25rem;
     }
 
-    /* Tabela de elementos (lista) */
+    /* tabela */
     .table-container {
       overflow-x: auto;
       margin: 1rem 0;
@@ -151,14 +169,7 @@
       background: #e5e7eb;
       z-index: 5;
     }
-    tbody tr:nth-child(even) {
-      background: #ffffff;
-    }
-    tbody tr:nth-child(odd) {
-      background: #f9fafb;
-    }
 
-    /* Cores por classe/família (linha inteira) */
     tr.nao-metal        { background: #dcfce7; }
     tr.metal-alcalino   { background: #ffe4e6; }
     tr.alcalino-terroso { background: #fef9c3; }
@@ -166,10 +177,7 @@
     tr.semimetal        { background: #ccfbf1; }
     tr.halogeno         { background: #fce7f3; }
     tr.gas-nobre        { background: #e0e7ff; }
-    tr.lantanideo       { background: #ede9fe; }
-    tr.actinideo        { background: #ffedd5; }
 
-    /* legenda de cores */
     .legend {
       display: flex;
       flex-wrap: wrap;
@@ -198,10 +206,7 @@
     .lc-semimetal        { background: #14b8a6; }
     .lc-halogeno         { background: #ec4899; }
     .lc-gas-nobre        { background: #6366f1; }
-    .lc-lantanideo       { background: #a855f7; }
-    .lc-actinideo        { background: #f97316; }
 
-    /* imagens de gráficos */
     .graphs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -234,9 +239,6 @@
       padding: 1.2rem 0 2.2rem;
     }
     code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-        "Liberation Mono", "Courier New", monospace;
-      font-size: 0.82rem;
       background: #e5e7eb;
       padding: 0.05rem 0.25rem;
       border-radius: 0.25rem;
@@ -247,383 +249,85 @@
 <header>
   <h1>Tabela Periódica &amp; Propriedades Periódicas – 2º Ano do EM</h1>
   <p>Material em HTML para estudo, revisão e uso em aula (PAS/ENEM).</p>
+
+  <!-- bloco com o nome do professor -->
+  <div class="professor">
+    <strong>Prof. William Mendonça – Química e Física</strong>
+    <span>Ensino Médio – 2º Ano</span>
+  </div>
+
   <nav>
     <a href="#intro">Introdução</a>
     <a href="#propriedades">Propriedades periódicas</a>
     <a href="#tabela">Tabela (lista H–Kr)</a>
     <a href="#graficos">Gráficos reais</a>
     <a href="#estudo">Como estudar</a>
-    <!-- link para outro arquivo da grade -->
-    <a href="grade_tabela_periodica.html" target="_blank">
-      Tabela em grade (H–Kr)
-    </a>
+    <a href="grade_tabela_periodica.html" target="_blank">Tabela em grade (H–Kr)</a>
   </nav>
 </header>
 
 <main>
   <div class="content">
-    <!-- INTRODUÇÃO -->
     <section id="intro">
       <h2>1. Objetivos da aula</h2>
-      <div class="grid-2">
-        <div>
-          <p>
-            Esta página foi feita para a aula de
-            <strong>Tabela Periódica e Propriedades Periódicas</strong>
-            do 2º ano do Ensino Médio.
-            Com ela, você vai:
-          </p>
-          <ul>
-            <li>Reconhecer a organização da tabela periódica (períodos e grupos).</li>
-            <li>Identificar as principais famílias de elementos e suas características.</li>
-            <li>Relacionar <strong>distribuição eletrônica</strong> com a posição do elemento.</li>
-            <li>Entender os gráficos de
-              <strong>raio atômico, energia de ionização,
-              eletronegatividade e afinidade eletrônica</strong>.
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Glossário rápido</h3>
-          <span class="badge">Z → número atômico</span>
-          <span class="badge">A → massa atômica (u)</span>
-          <span class="badge">Grupo → coluna</span>
-          <span class="badge">Período → linha</span>
-          <p>
-            <strong>Regra de ouro:</strong> os elementos aparecem em
-            <strong>ordem crescente de número atômico (Z)</strong>.  
-            As propriedades químicas e físicas variam de maneira periódica com Z.
-          </p>
-        </div>
-      </div>
+      <p>Esta página foi feita para a aula de <strong>Tabela Periódica e Propriedades Periódicas</strong> do 2º ano do Ensino Médio.</p>
+      <ul>
+        <li>Reconhecer a organização da tabela periódica (períodos e grupos).</li>
+        <li>Identificar as principais famílias e características.</li>
+        <li>Relacionar <strong>distribuição eletrônica</strong> com posição.</li>
+        <li>Compreender gráficos de <strong>raio atômico, energia de ionização, eletronegatividade e afinidade eletrônica</strong>.</li>
+      </ul>
     </section>
 
-    <!-- PROPRIEDADES PERIÓDICAS -->
     <section id="propriedades">
       <h2>2. Propriedades periódicas essenciais</h2>
-
       <h3>2.1 Raio atômico (r)</h3>
-      <p>
-        É o “tamanho” aproximado do átomo, medido da região do núcleo até a última
-        camada eletrônica. Em geral:
-      </p>
-      <ul>
-        <li>No <strong>grupo</strong>: o raio aumenta de cima para baixo.</li>
-        <li>No <strong>período</strong>: o raio diminui da esquerda para a direita.</li>
-      </ul>
+      <p>Medida do tamanho do átomo. No grupo: aumenta de cima para baixo. No período: diminui da esquerda para a direita.</p>
 
       <h3>2.2 Energia de ionização (Eᵢ)</h3>
-      <p>
-        É a energia necessária para arrancar um elétron de um átomo no estado gasoso.
-        Quanto menor o raio e maior a atração do núcleo, maior a energia necessária
-        para remover esse elétron.
-      </p>
-      <ul>
-        <li>No período: <strong>aumenta</strong> da esquerda para a direita.</li>
-        <li>No grupo: <strong>diminui</strong> de cima para baixo.</li>
-      </ul>
+      <p>Energia necessária para remover um elétron. Aumenta da esquerda para a direita; diminui de cima para baixo.</p>
 
       <h3>2.3 Eletronegatividade (χ)</h3>
-      <p>
-        Mede o “apetite” do átomo por elétrons em uma ligação.
-        O elemento mais eletronegativo é o <strong>flúor (F)</strong>.
-      </p>
-      <ul>
-        <li>Aumenta ao ir para a <strong>direita</strong> e para <strong>cima</strong> da tabela.</li>
-        <li>Metais alcalinos têm baixa eletronegatividade; halogênios têm alta.</li>
-      </ul>
+      <p>Capacidade de atrair elétrons. Cresce para a direita e para cima; o flúor é o mais eletronegativo.</p>
 
       <h3>2.4 Afinidade eletrônica (Eₐ)</h3>
-      <p>
-        É a energia <strong>liberada</strong> quando um átomo gasoso ganha um elétron.
-        Em geral, segue tendência parecida com a eletronegatividade:
-        valores maiores em não metais do lado direito da tabela.
-      </p>
+      <p>Energia liberada ao ganhar elétrons. Segue tendência semelhante à eletronegatividade.</p>
     </section>
 
-    <!-- TABELA PERIÓDICA (LISTA 1–36) -->
     <section id="tabela">
       <h2>3. Tabela periódica (Z = 1 a 36)</h2>
-      <p>
-        Abaixo estão os elementos dos quatro primeiros períodos (do
-        <strong>H</strong> ao <strong>Kr</strong>), que são os mais importantes para o 2º ano
-        e aparecem com frequência em questões de vestibular e PAS.
-      </p>
-
+      <p>Elementos mais cobrados do 1º ao 4º período.</p>
       <div class="legend">
-        <div class="legend-item">
-          <span class="legend-color lc-nao-metal"></span> Não metal
-        </div>
-        <div class="legend-item">
-          <span class="legend-color lc-metal-alcalino"></span> Metal alcalino (1A)
-        </div>
-        <div class="legend-item">
-          <span class="legend-color lc-alcalino-terroso"></span> Alcalino-terroso (2A)
-        </div>
-        <div class="legend-item">
-          <span class="legend-color lc-metal-transicao"></span> Metal de transição
-        </div>
-        <div class="legend-item">
-          <span class="legend-color lc-semimetal"></span> Semimetal (metaloide)
-        </div>
-        <div class="legend-item">
-          <span class="legend-color lc-halogeno"></span> Halogênio (7A)
-        </div>
-        <div class="legend-item">
-          <span class="legend-color lc-gas-nobre"></span> Gás nobre (8A)
-        </div>
+        <div class="legend-item"><span class="legend-color lc-nao-metal"></span> Não metal</div>
+        <div class="legend-item"><span class="legend-color lc-metal-alcalino"></span> Metal alcalino</div>
+        <div class="legend-item"><span class="legend-color lc-alcalino-terroso"></span> Alcalino-terroso</div>
+        <div class="legend-item"><span class="legend-color lc-metal-transicao"></span> Metal de transição</div>
+        <div class="legend-item"><span class="legend-color lc-semimetal"></span> Semimetal</div>
+        <div class="legend-item"><span class="legend-color lc-halogeno"></span> Halogênio</div>
+        <div class="legend-item"><span class="legend-color lc-gas-nobre"></span> Gás nobre</div>
       </div>
-
       <div class="table-container">
         <table>
           <thead>
-            <tr>
-              <th>Z</th>
-              <th>Símbolo</th>
-              <th>Nome</th>
-              <th>Massa atômica (u)</th>
-              <th>Grupo / Família</th>
-              <th>Período</th>
-              <th>Classe</th>
-            </tr>
+            <tr><th>Z</th><th>Símbolo</th><th>Nome</th><th>Massa (u)</th><th>Grupo</th><th>Período</th><th>Classe</th></tr>
           </thead>
           <tbody>
-            <!-- PERÍODO 1 -->
-            <tr class="nao-metal">
-              <td>1</td><td>H</td><td>Hidrogênio</td><td>1,008</td>
-              <td>1 (grupo do H)</td><td>1</td><td>Não metal</td>
-            </tr>
-            <tr class="gas-nobre">
-              <td>2</td><td>He</td><td>Hélio</td><td>4,0026</td>
-              <td>18 (gases nobres)</td><td>1</td><td>Gás nobre</td>
-            </tr>
-
-            <!-- PERÍODO 2 -->
-            <tr class="metal-alcalino">
-              <td>3</td><td>Li</td><td>Lítio</td><td>6,94</td>
-              <td>1 (metais alcalinos)</td><td>2</td><td>Metal alcalino</td>
-            </tr>
-            <tr class="alcalino-terroso">
-              <td>4</td><td>Be</td><td>Berílio</td><td>9,0122</td>
-              <td>2 (alcalino-terrosos)</td><td>2</td><td>Alcalino-terroso</td>
-            </tr>
-            <tr class="semimetal">
-              <td>5</td><td>B</td><td>Boro</td><td>10,81</td>
-              <td>13</td><td>2</td><td>Semimetal</td>
-            </tr>
-            <tr class="nao-metal">
-              <td>6</td><td>C</td><td>Carbono</td><td>12,011</td>
-              <td>14</td><td>2</td><td>Não metal</td>
-            </tr>
-            <tr class="nao-metal">
-              <td>7</td><td>N</td><td>Nitrogênio</td><td>14,007</td>
-              <td>15</td><td>2</td><td>Não metal</td>
-            </tr>
-            <tr class="nao-metal">
-              <td>8</td><td>O</td><td>Oxigênio</td><td>15,999</td>
-              <td>16</td><td>2</td><td>Não metal</td>
-            </tr>
-            <tr class="halogeno">
-              <td>9</td><td>F</td><td>Flúor</td><td>18,998</td>
-              <td>17 (halogênios)</td><td>2</td><td>Halogênio</td>
-            </tr>
-            <tr class="gas-nobre">
-              <td>10</td><td>Ne</td><td>Neônio</td><td>20,180</td>
-              <td>18</td><td>2</td><td>Gás nobre</td>
-            </tr>
-
-            <!-- PERÍODO 3 -->
-            <tr class="metal-alcalino">
-              <td>11</td><td>Na</td><td>Sódio</td><td>22,990</td>
-              <td>1</td><td>3</td><td>Metal alcalino</td>
-            </tr>
-            <tr class="alcalino-terroso">
-              <td>12</td><td>Mg</td><td>Magnésio</td><td>24,305</td>
-              <td>2</td><td>3</td><td>Alcalino-terroso</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>13</td><td>Al</td><td>Alumínio</td><td>26,982</td>
-              <td>13</td><td>3</td><td>Metal</td>
-            </tr>
-            <tr class="semimetal">
-              <td>14</td><td>Si</td><td>Silício</td><td>28,085</td>
-              <td>14</td><td>3</td><td>Semimetal</td>
-            </tr>
-            <tr class="nao-metal">
-              <td>15</td><td>P</td><td>Fósforo</td><td>30,974</td>
-              <td>15</td><td>3</td><td>Não metal</td>
-            </tr>
-            <tr class="nao-metal">
-              <td>16</td><td>S</td><td>Enxofre</td><td>32,06</td>
-              <td>16</td><td>3</td><td>Não metal</td>
-            </tr>
-            <tr class="halogeno">
-              <td>17</td><td>Cl</td><td>Cloro</td><td>35,45</td>
-              <td>17</td><td>3</td><td>Halogênio</td>
-            </tr>
-            <tr class="gas-nobre">
-              <td>18</td><td>Ar</td><td>Argônio</td><td>39,948</td>
-              <td>18</td><td>3</td><td>Gás nobre</td>
-            </tr>
-
-            <!-- PERÍODO 4 -->
-            <tr class="metal-alcalino">
-              <td>19</td><td>K</td><td>Potássio</td><td>39,098</td>
-              <td>1</td><td>4</td><td>Metal alcalino</td>
-            </tr>
-            <tr class="alcalino-terroso">
-              <td>20</td><td>Ca</td><td>Cálcio</td><td>40,078</td>
-              <td>2</td><td>4</td><td>Alcalino-terroso</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>21</td><td>Sc</td><td>Escândio</td><td>44,956</td>
-              <td>3</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>22</td><td>Ti</td><td>Titânio</td><td>47,867</td>
-              <td>4</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>23</td><td>V</td><td>Vanádio</td><td>50,942</td>
-              <td>5</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>24</td><td>Cr</td><td>Cromo</td><td>51,996</td>
-              <td>6</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>25</td><td>Mn</td><td>Manganês</td><td>54,938</td>
-              <td>7</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>26</td><td>Fe</td><td>Ferro</td><td>55,845</td>
-              <td>8</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>27</td><td>Co</td><td>Cobalto</td><td>58,933</td>
-              <td>9</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>28</td><td>Ni</td><td>Níquel</td><td>58,693</td>
-              <td>10</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>29</td><td>Cu</td><td>Cobre</td><td>63,546</td>
-              <td>11</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>30</td><td>Zn</td><td>Zinco</td><td>65,38</td>
-              <td>12</td><td>4</td><td>Metal de transição</td>
-            </tr>
-            <tr class="metal-transicao">
-              <td>31</td><td>Ga</td><td>Gálio</td><td>69,723</td>
-              <td>13</td><td>4</td><td>Metal</td>
-            </tr>
-            <tr class="semimetal">
-              <td>32</td><td>Ge</td><td>Germânio</td><td>72,630</td>
-              <td>14</td><td>4</td><td>Semimetal</td>
-            </tr>
-            <tr class="semimetal">
-              <td>33</td><td>As</td><td>Arsênio</td><td>74,922</td>
-              <td>15</td><td>4</td><td>Semimetal</td>
-            </tr>
-            <tr class="nao-metal">
-              <td>34</td><td>Se</td><td>Selênio</td><td>78,971</td>
-              <td>16</td><td>4</td><td>Não metal</td>
-            </tr>
-            <tr class="halogeno">
-              <td>35</td><td>Br</td><td>Bromo</td><td>79,904</td>
-              <td>17</td><td>4</td><td>Halogênio</td>
-            </tr>
-            <tr class="gas-nobre">
-              <td>36</td><td>Kr</td><td>Criptônio</td><td>83,798</td>
-              <td>18</td><td>4</td><td>Gás nobre</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p style="font-size:0.85rem;color:#4b5563;">
-        Observação: para estender esta tabela até Z = 118, basta continuar o
-        mesmo padrão de linha <code>&lt;tr&gt;</code> usando dados confiáveis
-        (por exemplo, arquivos JSON públicos de tabela periódica).
-      </p>
-    </section>
-
-    <!-- GRÁFICOS REAIS (LINKADOS) -->
-    <section id="graficos">
-      <h2>4. Gráficos reais de propriedades periódicas</h2>
-      <p>
-        Os gráficos abaixo vêm de materiais didáticos e bases públicas e mostram
-        <strong>dados reais</strong> das propriedades em função do número atômico (Z)
-        ou da posição na tabela. Eles são ótimos para discutir as tendências em sala.
-      </p>
-
-      <div class="graphs-grid">
-        <div class="graph-card">
-          <img
-            src="https://dr282zn36sxxg.cloudfront.net/datastreams/f-d%3A9c6788a0d6ab97c5e5503d2162168fd87b93f0a60bff8a6ac24dbcc9%2BIMAGE_TINY%2BIMAGE_TINY.1"
-            alt="Gráfico de energia de ionização em função do número atômico"
-          />
-          <small>
-            1ª Energia de ionização × Z (elementos representativos).  
-            Fonte: CK-12 / LibreTexts – Periodic Trends.
-          </small>
-        </div>
-        <div class="graph-card">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Periodic_trends.svg"
-            alt="Gráfico das tendências periódicas principais"
-          />
-          <small>
-            Resumo gráfico de tendências (raio, eletronegatividade, energia de
-            ionização, afinidade etc.). Fonte: Wikipedia – Periodic trends.
-          </small>
-        </div>
-      </div>
-
-      <p style="font-size:0.85rem;color:#4b5563;margin-top:1rem;">
-        Se quiser fazer seus próprios gráficos com seus alunos, dá para pegar
-        dados numéricos em:
-        <br />
-        • PubChem – tabelas de <em>atomic radius</em>, <em>ionization energy</em>,
-        <em>electronegativity</em> etc.  
-        • Planilhas ou arquivos JSON de tabela periódica (projetos educacionais em GitHub).
-      </p>
-    </section>
-
-    <!-- COMO ESTUDAR -->
-    <section id="estudo">
-      <h2>5. Como usar esta página para estudar</h2>
-      <ol>
-        <li>
-          Comece pela seção de <strong>propriedades periódicas</strong> e anote no seu caderno
-          os sentidos das setas (↑ ↓ ← →).
-        </li>
-        <li>
-          Use a tabela de elementos (H até Kr) para treinar:
-          <ul>
-            <li>identificar família, período e classe do elemento;</li>
-            <li>prever o tipo de ligação que ele costuma formar;</li>
-            <li>montar distribuições eletrônicas e identificar a camada de valência.</li>
-          </ul>
-        </li>
-        <li>
-          Abra os gráficos reais e tente explicar, com palavras suas, por que as
-          curvas sobem e descem (ligando sempre com raio atômico e carga nuclear).
-        </li>
-        <li>
-          Monte seus <strong>resumos pessoais</strong> (fichas, mapas mentais ou flashcards)
-          usando símbolo, nome, Z e família dos elementos mais cobrados.
-        </li>
-      </ol>
-    </section>
-  </div>
-
-  <footer>
-    Material didático em HTML – Tabela Periódica &amp; Propriedades Periódicas (2º ano EM).<br/>
-    Hospede este arquivo como <code>index.html</code> no GitHub Pages para acesso dos alunos.
-  </footer>
-</main>
-</body>
-</html>
+            <tr class="nao-metal"><td>1</td><td>H</td><td>Hidrogênio</td><td>1,008</td><td>1</td><td>1</td><td>Não metal</td></tr>
+            <tr class="gas-nobre"><td>2</td><td>He</td><td>Hélio</td><td>4,0026</td><td>18</td><td>1</td><td>Gás nobre</td></tr>
+            <tr class="metal-alcalino"><td>3</td><td>Li</td><td>Lítio</td><td>6,94</td><td>1</td><td>2</td><td>Metal alcalino</td></tr>
+            <tr class="alcalino-terroso"><td>4</td><td>Be</td><td>Berílio</td><td>9,0122</td><td>2</td><td>2</td><td>Alcalino-terroso</td></tr>
+            <tr class="semimetal"><td>5</td><td>B</td><td>Boro</td><td>10,81</td><td>13</td><td>2</td><td>Semimetal</td></tr>
+            <tr class="nao-metal"><td>6</td><td>C</td><td>Carbono</td><td>12,011</td><td>14</td><td>2</td><td>Não metal</td></tr>
+            <tr class="nao-metal"><td>7</td><td>N</td><td>Nitrogênio</td><td>14,007</td><td>15</td><td>2</td><td>Não metal</td></tr>
+            <tr class="nao-metal"><td>8</td><td>O</td><td>Oxigênio</td><td>15,999</td><td>16</td><td>2</td><td>Não metal</td></tr>
+            <tr class="halogeno"><td>9</td><td>F</td><td>Flúor</td><td>18,998</td><td>17</td><td>2</td><td>Halogênio</td></tr>
+            <tr class="gas-nobre"><td>10</td><td>Ne</td><td>Neônio</td><td>20,180</td><td>18</td><td>2</td><td>Gás nobre</td></tr>
+            <tr class="metal-alcalino"><td>11</td><td>Na</td><td>Sódio</td><td>22,990</td><td>1</td><td>3</td><td>Metal alcalino</td></tr>
+            <tr class="alcalino-terroso"><td>12</td><td>Mg</td><td>Magnésio</td><td>24,305</td><td>2</td><td>3</td><td>Alcalino-terroso</td></tr>
+            <tr class="metal-transicao"><td>13</td><td>Al</td><td>Alumínio</td><td>26,982</td><td>13</td><td>3</td><td>Metal</td></tr>
+            <tr class="semimetal"><td>14</td><td>Si</td><td>Silício</td><td>28,085</td><td>14</td><td>3</td><td>Semimetal</td></tr>
+            <tr class="nao-metal"><td>15</td><td>P</td><td>Fósforo</td><td>30,974</td><td>15</td><td>3</td><td>Não metal</td></tr>
+            <tr class="nao-metal"><td>16</td><td>S</td><td>Enxofre</td><td>32,06</td><td>16</td><td>3</td><td>Não metal</td></tr>
+            <tr class="halogeno"><td>17</td><td>Cl</td><td>Cloro</td><td>35,45</td><td>17</td><td>3</td><td>Halogênio</td></tr>
+            <tr class="gas-nobre"><td>18</td><td>Ar</td><td>Argônio</td><td>39,948</td><td>18</td><td>3</td><td>Gás nobre</td></tr>
+            <tr class="metal-alcalino"><td>19</td><td>K</td><td>Potássio</td><td>39,098</
